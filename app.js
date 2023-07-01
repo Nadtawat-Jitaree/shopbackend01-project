@@ -12,9 +12,10 @@ app.use(express.urlencoded({extended:false}))
 app.use(cookieParser())
 app.use(session({secret:"mysession",resave:false,saveUninitialized:false}))
 app.use(router)
+
 app.use(express.static(path.join(__dirname,'public')))
-        app.listen(100,()=>{
-            console.log("รัน server ที่ port 100")
+        app.listen(()=>{
+            console.log("รัน server ที่ port")
         })
         
         
