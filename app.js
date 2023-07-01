@@ -14,8 +14,8 @@ app.use(session({secret:"mysession",resave:false,saveUninitialized:false}))
 app.use(router)
 
 app.use(express.static(path.join(__dirname,'public')))
-        app.listen(()=>{
-            console.log("รัน server ที่ port")
-        })
+    app.listen(port, ()=>{
+        console.log("server started")
+    })
         
         
