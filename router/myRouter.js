@@ -112,7 +112,7 @@ router.post('/loginadmin',(req,res)=>{
     const password = req.body.password
     const timeExpire = 86400000  // 1 day
 
-    if(username === "admin" && password === "a"){
+    if(username === "admin" && password === "0932195483"){
         // สร้าง cookie
         req.session.username = username
         req.session.password = password
