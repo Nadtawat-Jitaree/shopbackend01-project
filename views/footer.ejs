@@ -1,0 +1,31 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+  .navbar-brand {
+    font-family: 'Caprasimo', cursive;
+    font-size: 2rem;
+  }
+  * {
+    font-family: 'Itim', cursive;
+  }
+  .block {
+    display: block !important;
+  }
+  .block a{
+    color: aliceblue;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+<nav class="navbar navbar-expand-md navbar-light bg-dark">
+    <ul class="navbar-nav" style="display: flex;">
+        <div class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3"
+           data-toggle=""><button onclick="document.getElementById('none').classList.add('block')">ระบบหลังบ้าน (BACKEND)</button></a>
+        </div>
+        <div class="nav-link text-light text-uppercase font-weight-bold px-3" style="display: none;" id="none">
+          <a href="/manage"><button>จัดการสินค้า</button></a>
+          <a href="/add-product"><button>บันทึกสินค้า</button></a>
+        </div>
+    </ul>
+</nav>

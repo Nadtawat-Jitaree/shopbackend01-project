@@ -24,12 +24,15 @@
                                 <a href="/<%= item._id%>"><%= item.name%></a>
                             </h4>
                             <h5>ราคา <%= item.price%> บาท</h5>
-                            <p class="card-text"><%= item.description%></p>
+                            <div class="card-text"><%= item.description1%></div>
+                            <div class="card-text"><%= item.description2%></div>
+                            <a class="card-text" href="<%= item.description3%>" target="_blank">ลิ้งค์</a>
                         </div>
                     </div>
                 </div>
             <% }) %>
             </div>
         </div>
+        <%- include('footer') %>
     </body>
 </html>

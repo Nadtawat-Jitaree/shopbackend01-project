@@ -23,12 +23,16 @@
                             <div class="card-body">
                                 <h3 class="card-title"><%=product.name%></h3>
                                 <h4>ราคาสินค้า <%=product.price%></h4>
-                                <p class="card-text"><%=product.description%></p>
+                                <div class="card-text"><%=product.description1%></div>
+                                <div class="card-text"><%=product.description2%></div>
+                                <a class="card-text" href="<%=product.description3%>" target="_blank">ลิ้งค์</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         <% } %>
+        <div style="height: 100vh;"></div>
+        <%- include('footer') %>
     </body>
 </html>

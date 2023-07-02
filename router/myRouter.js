@@ -46,8 +46,19 @@ router.get('/manage',(req,res)=>{
     }
 })
 
+router.get('/login',(req,res)=>{
+    Product.find().exec((err,doc)=>{
+        res.render('login',{products:doc})
+    })
+})
+router.get('/register',(req,res)=>{
+    Product.find().exec((err,doc)=>{
+        res.render('register',{products:doc})
+    })
+})
+
 // ออกจากระบบ
-router.get('/logout',(req,res)=> {
+router.get('/logoutadmin',(req,res)=> {
     req.session.destroy((err)=>{
         res.redirect('/manage')
     })
@@ -65,7 +76,9 @@ router.post('/insert',upload.single("image"),(req,res)=> {
         name:req.body.name,
         price:req.body.price,
         image:req.file.filename,
-        description:req.body.description
+        description1:req.body.description1,
+        description2:req.body.description2,
+        description3:req.body.description3
     })
     Product.saveProduct(data,(err)=>{
         if (err) console.log(err)
@@ -95,7 +108,9 @@ router.post('/update',(req,res)=> {
     let data = ({
         name:req.body.name,
         price:req.body.price,
-        description:req.body.description
+        description1:req.body.description1,
+        description2:req.body.description2,
+        description3:req.body.description3
     })
     Product.findByIdAndUpdate(update_id,data,{useFindAndModify:false}).exec(err=>{
         res.redirect('/manage')
@@ -103,7 +118,7 @@ router.post('/update',(req,res)=> {
 })
 
 // เข้าสู่ระบบ
-router.post('/login',(req,res)=>{
+router.post('/loginadmin',(req,res)=>{
     const username = req.body.username
     const password = req.body.password
     const timeExpire = 86400000  // 1 day

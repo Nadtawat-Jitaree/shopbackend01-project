@@ -15,13 +15,15 @@
         <%- include('navbar') %>
         <div class="container">
             <h2>จัดการสินค้า</h2>
-            <p>เพิ่ม ลบ แก้ไขข้อมูลในฐานข้อมูล <a href="/logout">ออกจากระบบ</a></p>            
+            <p>เพิ่ม ลบ แก้ไขข้อมูลในฐานข้อมูล <a href="/logoutadmin">ออกจากระบบ</a></p>            
             <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>ชื่อสินค้า</th>
                         <th>ราคา</th>
-                        <th>รายละเอียด</th>
+                        <th>รายละเอียด 1</th>
+                        <th>รายละเอียด 2</th>
+                        <th>รายละเอียด 3</th>
                         <th>ลบ</th>
                         <th>แก้ไข</th>
                     </tr>
@@ -31,7 +33,9 @@
                     <tr>
                         <td><%= item.name%></td>
                         <td><%= item.price%></td>
-                        <td><%= item.description%></td>
+                        <td><%= item.description1%></td>
+                        <td><%= item.description2%></td>
+                        <td><%= item.description3%></td>
                         <td><a class="btn btn-danger" href="/delete/<%= item._id%>" onclick="return confirm('คุณต้องการลบข้อมูลหรือไม่ ?')">ลบ</a></td>
                         <td>
                             <form action="/edit" method="POST">
@@ -44,5 +48,7 @@
                 </tbody>
             </table>
         </div>
+        <div style="height: 100vh;"></div>
+        <%- include('footer') %>
     </body>
 </html>
