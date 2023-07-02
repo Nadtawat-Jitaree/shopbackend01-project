@@ -10,12 +10,38 @@
         <script src="js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
         <link rel="icon" type="image/x-icon" href="https:/www.puanj.online/pic/puanj.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+/* CSS */
+.button-24 {
+font-family: 'Itim', cursive;
+  background: #000000;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 5px;
+  min-height: 5px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+</style>
     </head>
     <body>
         <%- include('navbar') %>
         <div class="container">
             <div class="row my-3">
-            <% Object.values(products).forEach(function(item){%>
+            <% Object.values(products).reverse().forEach(function(item){%>
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
                         <a href="/<%= item._id%>"><img class="card-img-top" src="/images/products/<%= item.image%>" alt="" /></a>
@@ -23,10 +49,14 @@
                             <h4 class="card-title">
                                 <a href="/<%= item._id%>"><%= item.name%></a>
                             </h4>
-                            <h5>ราคา <%= item.price%> บาท</h5>
+                            <h5>ราคาสินค้า : <a style="color: red;font-weight: bold;"><%=item.price%></a> บาท</h5>
                             <div class="card-text"><%= item.description1%></div>
-                            <div class="card-text"><%= item.description2%></div>
-                            <a class="card-text" href="<%= item.description3%>" target="_blank">ลิ้งค์</a>
+                            <div class="card-text">รหัสสินค้า : <a style="color: chocolate;"><%= item.description2%></a></div>
+                            <div class="card-text">สถานะสินค้า : <a style="color: brown;"><%= item.state%></a></div>
+                            <div style="display: flex;justify-content: space-between;margin-top: 10px;">
+                                <div><a class="card-text" href="<%= item.description3%>" target="_blank"><button class="button-24" style="background: #ffffff;color: #000000;">ลิ้งค์</button></a></div>
+                                <div><a href="https://www.facebook.com/nadtawatjitaree/" target="_blank"><button class="button-24">สั่งซื้อ</button></a></div>
+                            </div>
                         </div>
                     </div>
                 </div>

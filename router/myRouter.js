@@ -67,7 +67,9 @@ router.post('/insert',upload.single("image"),(req,res)=> {
         image:req.file.filename,
         description1:req.body.description1,
         description2:req.body.description2,
-        description3:req.body.description3
+        description3:req.body.description3,
+        namegame:req.body.namegame,
+        state:req.body.state
     })
     Product.saveProduct(data,(err)=>{
         if (err) console.log(err)
@@ -99,7 +101,9 @@ router.post('/update',(req,res)=> {
         price:req.body.price,
         description1:req.body.description1,
         description2:req.body.description2,
-        description3:req.body.description3
+        description3:req.body.description3,
+        namegame:req.body.namegame,
+        state:req.body.state
     })
     Product.findByIdAndUpdate(update_id,data,{useFindAndModify:false}).exec(err=>{
         res.redirect('/manage')

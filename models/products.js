@@ -24,6 +24,8 @@ let productSchema = mongoose.Schema({
     description1:String,
     description2:String,
     description3:String,
+    namegame:String,
+    state:String
 })
 
 // สร้างโมเดล

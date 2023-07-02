@@ -22,20 +22,24 @@
                         <th>ชื่อสินค้า</th>
                         <th>ราคา</th>
                         <th>รายละเอียด 1</th>
-                        <th>รายละเอียด 2</th>
-                        <th>รายละเอียด 3</th>
+                        <th>รหัสสินค้า</th>
+                        <th>ลิ้งค์</th>
+                        <th>ชื่อเกม</th>
+                        <th>สถานะสินค้า</th>
                         <th>ลบ</th>
                         <th>แก้ไข</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% Object.values(products).forEach(function(item){%>
+                    <% Object.values(products).reverse().forEach(function(item){%>
                     <tr>
                         <td><%= item.name%></td>
                         <td><%= item.price%></td>
                         <td><%= item.description1%></td>
                         <td><%= item.description2%></td>
                         <td><%= item.description3%></td>
+                        <td><%= item.namegame%></td>
+                        <td><%= item.state%></td>
                         <td><a class="btn btn-danger" href="/delete/<%= item._id%>" onclick="return confirm('คุณต้องการลบข้อมูลหรือไม่ ?')">ลบ</a></td>
                         <td>
                             <form action="/edit" method="POST">

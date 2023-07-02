@@ -3,28 +3,77 @@
   @import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
   .navbar-brand {
     font-family: 'Caprasimo', cursive;
-    font-size: 2rem;
+    font-size: 1rem;
   }
   * {
     font-family: 'Itim', cursive;
   }
+
+        div.scrollmenu {
+          overflow: auto;
+          white-space: nowrap;
+        }
+        
+        div.scrollmenu a {
+          display: inline-block;
+          color: rgb(255, 255, 255);
+          text-align: center;
+          padding: 5px;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        
+
+        #style-6::-webkit-scrollbar-track
+        {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        }
+
+        #style-6::-webkit-scrollbar
+        {
+            width: 10px;
+        }
+
+        #style-6::-webkit-scrollbar-thumb
+        {
+            background-color: rgb(255, 78, 78);	
+            background-image: -webkit-linear-gradient(45deg,
+            rgba(255, 255, 255, .2) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, .2) 50%,
+            rgba(255, 255, 255, .2) 75%,
+            transparent 75%,
+            transparent)
+        }
+
 </style>
 <nav class="bg-dark">
-  <div style="display: flex;justify-content: space-between;align-items: center;">
-    <div class="navbar navbar-expand-md navbar-light">
-      <a href="/" class="navbar-brand" style="color: rgb(255, 0, 0);">PUANJ</a>
-      <ul class="navbar-nav">
-          <li class="nav-item dropdown"><a class="nav-link text-light text-uppercase font-weight-bold px-3 dropdown-toggle"
-            href="" data-toggle="dropdown">ร้านขายไอดีเกม</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href=""></a>
-              <a class="dropdown-item" href=""></a>
-            </div>
-          </li>
-      </ul>
+  <div class="navbar navbar-expand-md navbar-light" style="display: flex;justify-content: space-between;align-items: center;">
+    <div><a href="/" class="navbar-brand" style="color: rgb(255, 0, 0);font-size: 1.5rem;">PUANJ</a></div>
+    <div style="color: aliceblue;"><time id="datetime"></time> TH</div>
+    <script>
+      var dt = new Date();
+      document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    </script>
+  </div>
+  <div style="display: flex;align-items: center;padding: 20px;">
+    <div class="scrollmenu" id="style-6">
+      <a href="" target="_parent">ร้านขายไอดีเกม STEAM</a>
+      <a href="" target="_parent">ร้านขายเสื้อผ้า</a>
+      <a href="" target="_parent">ร้านขายขนม</a>
+      <a href="" target="_parent">ร้านขายไอดี VALORANT</a>
     </div>
-    <div class="nav-link text-light text-uppercase font-weight-bold px-3" style="display: flex;">
-        <div class=""><a href="/" style="color: aliceblue;">Login</a> | <a href="/" style="color: aliceblue;">Register</a></div>
-    </div>  
+  </div>
+  <div style="display: none;">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown"><a class="nav-link text-light text-uppercase font-weight-bold px-3 dropdown-toggle"
+        href="" data-toggle="dropdown">ร้านขายไอดีเกม</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="">ID STEAM มือ 1</a>
+          <a class="dropdown-item" href="">ID STEAM มือ 2</a>
+        </div>
+      </li>
+    </ul>
   </div>
 </nav>
