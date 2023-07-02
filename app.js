@@ -2,9 +2,7 @@ const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const session = require('express-session')
-const expressSession = require('express-session')
 const router = require('./router/myRouter')
-const storeUserController = require('./controllers/storeUserController')
 const app = express()
 
 
@@ -16,9 +14,6 @@ app.use(cookieParser())
 app.use(session({secret:"mysession",resave:false,saveUninitialized:false}))
 app.use(router)
 app.use(express.static(path.join(__dirname,'public')))
-app.use(expressSession({
-    secret: "node secret"
-}))
 
 const port = process.env.PORT || 5002
 

@@ -46,17 +46,6 @@ router.get('/manage',(req,res)=>{
     }
 })
 
-router.get('/login',(req,res)=>{
-    Product.find().exec((err,doc)=>{
-        res.render('login',{products:doc})
-    })
-})
-router.get('/register',(req,res)=>{
-    Product.find().exec((err,doc)=>{
-        res.render('register',{products:doc})
-    })
-})
-
 // ออกจากระบบ
 router.get('/logoutadmin',(req,res)=> {
     req.session.destroy((err)=>{

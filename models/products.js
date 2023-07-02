@@ -1,7 +1,6 @@
 // ใช้งาน mongoose
 const mongoose = require('mongoose')
 require('dotenv').config()
-const bcrypt = require('bcrypt')
 
 // เชื่อมไปยัง MongoDB
 
@@ -25,34 +24,8 @@ let productSchema = mongoose.Schema({
     description1:String,
     description2:String,
     description3:String,
-    username: {
-        type: String,
-        require: [true, 'Please provide username']
-    },
-    email: {
-        type: String,
-        require: [true, 'Please provide email']
-    },
-    password: {
-        type: String,
-        require: [true, 'Please provide password']
-    }
-})
-const UserSchema = productSchema
-
-UserSchema.pre('save', function(next) {
-    const user = this
-
-    bcrypt.hash(user.password, 10).then(hash => {
-        user.password = hash
-        next()
-    }).catch(error => {
-        console.error(error)
-    })
 })
 
-const User = mongoose.model('User', UserSchema)
-module.exports = User
 // สร้างโมเดล
 let Product = mongoose.model("products",productSchema)
 
